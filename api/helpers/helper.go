@@ -23,7 +23,7 @@ func RemoveDomainError(url string) bool {
 	return true
 }
 
-func ForceHTTP(url string) string {
+func ForceHTTPS(url string) string {
 	if url[:4] != "http" {
 		return "https://" + url
 	}

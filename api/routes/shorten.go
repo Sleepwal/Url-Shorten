@@ -38,8 +38,8 @@ func ShortenUrl(c *fiber.Ctx) error {
 	if !helpers.RemoveDomainError(body.URL) {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "invalid domain!"})
 	}
-	// 强制http，SSL
-	body.URL = helpers.ForceHTTP(body.URL)
+	// 强制https，SSL
+	body.URL = helpers.ForceHTTPS(body.URL)
 
 	return nil
 }
